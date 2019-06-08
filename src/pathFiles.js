@@ -2,7 +2,7 @@ import module from 'path'
 import modulefs from 'fs'
 export const isAbsoluteRuta = module.isAbsolute;
 export const convAbso = module.resolve;
-export const isExit = modulefs.exists;
+// export const isExit = modulefs.exists;
 export const isDir = modulefs.readdir;
 export const isFile = modulefs.stat;
 
