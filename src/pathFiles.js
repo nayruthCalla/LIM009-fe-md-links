@@ -3,6 +3,7 @@ import modulefs from 'fs'
 export const convAbso = module.resolve;
 export const extName = module.extname;
 export const isFile = modulefs.stat;
+export const readFile = modulefs.readFile;
 export const pathFile = (path)=>{
     const absoltPath = convAbso(path)
     return new Promise((resolve,reject)=>{
@@ -29,5 +30,5 @@ export const markdownFile = (path)=>{
         }
     })  
 }
-markdownFile('../node-eaxmplo/README.md').then(result => console.log(result))
+// markdownFile('../node-eaxmplo/README.md').then(result => console.log(result))
 
