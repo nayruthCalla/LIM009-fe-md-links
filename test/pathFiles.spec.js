@@ -8,8 +8,8 @@ describe('verificar si son funciones',()=>{
     })    
 })
 test('Deberia retornar la ruta enviada',()=>{
-    return pathFile('../node-eaxmplo/src/program.js').then(result =>{
-     expect(result).toBe('/home/nayruth/Escritorio/node-eaxmplo/src/program.js')
+    return pathFile('./folder/readmeTuto.md').then(result =>{
+     expect(result).toBe('/home/nayruth/Escritorio/LIM009-fe-md-links/folder/readmeTuto.md')
     })
 });
 test('Error al ingresar una ruta', () => {
@@ -18,12 +18,12 @@ test('Error al ingresar una ruta', () => {
   });
 });
 test('Deberia retornar la false si es un directorio',()=>{
-    return pathFile('../node-eaxmplo/src/').then(result =>{
+    return pathFile('./folder/files/').then(result =>{
         expect(result).toBe(false)
     })
 });
 test('deberia retornar un array de rutas absolutas',()=>{
-    return markdownFile('../node-eaxmplo/README.md').then(result =>{
-        expect(result).toEqual(['/home/nayruth/Escritorio/node-eaxmplo/README.md'])
+    return markdownFile('./folder/readmeTuto.md').then(result =>{
+        expect(result).toEqual(['/home/nayruth/Escritorio/LIM009-fe-md-links/folder/readmeTuto.md'])
     })
 })

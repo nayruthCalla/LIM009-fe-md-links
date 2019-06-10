@@ -5,7 +5,7 @@ export const readFiles = (path)=>{
            result.forEach(element =>{
             readFile(element,(err,data)=>{
                 if(err){
-                    reject(err)
+                    reject('hubo un error')
                 }
                 else{
                     resolve(data.toString())
@@ -15,4 +15,4 @@ export const readFiles = (path)=>{
         })
     })
 }
-readFiles('../node-eaxmplo/README.md').then(result => console.log(result))
+readFiles('./folder/readmeTuto.md').then(result => console.log(result))
