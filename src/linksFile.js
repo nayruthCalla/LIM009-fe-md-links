@@ -9,7 +9,8 @@ export const readFiles = (path)=>{
                     reject('hubo un error')
                 }
                 else{
-                    resolve(data.toString())
+                    data.toString()
+                    
                     // console.log(data.toString())
                 }
             })
