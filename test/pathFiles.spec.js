@@ -19,11 +19,21 @@ test('Error al ingresar una ruta', () => {
 });
 test('Deberia retornar la false si es un directorio',()=>{
     return pathFile('./folder/files/').then(result =>{
-        expect(result).toBe(false)
+        expect(result).toEqual(["/home/nayruth/Escritorio/LIM009-fe-md-links/folder/files/app.js", "/home/nayruth/Escritorio/LIM009-fe-md-links/folder/files/carpeta/archivo.md", "/home/nayruth/Escritorio/LIM009-fe-md-links/folder/files/carpeta/documents/readText.md", "/home/nayruth/Escritorio/LIM009-fe-md-links/folder/files/ejemplo.md"])
     })
 });
+
 test('deberia retornar un array de rutas absolutas',()=>{
     return markdownFile('./folder/readmeTuto.md').then(result =>{
         expect(result).toEqual(['/home/nayruth/Escritorio/LIM009-fe-md-links/folder/readmeTuto.md'])
+    })
+})
+test('Deberia retornar un array de rutas absolutas de solo archivos markdown si es un directorio',()=>{
+    return markdownFile('./folder/').then(result =>{
+        expect(result).toEqual([ '/home/nayruth/Escritorio/LIM009-fe-md-links/folder/README.md',
+        '/home/nayruth/Escritorio/LIM009-fe-md-links/folder/files/carpeta/archivo.md',
+        '/home/nayruth/Escritorio/LIM009-fe-md-links/folder/files/carpeta/documents/readText.md',
+        '/home/nayruth/Escritorio/LIM009-fe-md-links/folder/files/ejemplo.md',
+        '/home/nayruth/Escritorio/LIM009-fe-md-links/folder/readmeTuto.md' ])
     })
 })

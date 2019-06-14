@@ -19,15 +19,13 @@ export const pathFile = (path)=>{
             }
             else {
                  readDir(absoltPath, (err, files) => {
-                    if(err){
-                        reject('ocurrio un error')
-                    }else{
+                    // if(err){
+                        // reject('ocurrio un error')
+                    // }else{
                         const paths = files.map(elemt => join(absoltPath,elemt))
                         Promise.all(paths.map(element => pathFile(element)))
-                        .then(paths => resolve([].concat.apply([],paths))
-                            
-                        ) 
-                    }
+                        .then(paths => resolve([].concat.apply([],paths))) 
+                    // }
                  });
             }
         })
