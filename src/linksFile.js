@@ -1,7 +1,17 @@
 import {readFile,markdownFile,modulefs} from './pathFiles.js';
 const marked = require('marked')
 // var fs = require('fs');
-
+export const readFiles = (path)=>{
+    return new Promise((resolve,reject)=>{
+        readFile(path,(err,data)=>{
+            if(err){
+                reject('Hubo un error!')
+            }else{
+                resolve(data.toString())
+            }
+        })
+    })
+}
 export const getLinks = (filecont,file)=>{
     let arrLinks = []   
     let renderer = new marked.Renderer();
