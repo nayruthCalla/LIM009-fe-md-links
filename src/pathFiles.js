@@ -47,5 +47,5 @@ export const markdownFile = (path)=>{
           }
     })
 }
-// markdownFile('./folder/').then(result => console.log(result))
+// markdownFile('/home/nayruth/Escritorio/LIM009-fe-md-links/folder/readmeTuto.md').then(result => console.log(result))
 

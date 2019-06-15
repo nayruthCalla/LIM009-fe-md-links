@@ -1,4 +1,4 @@
-import {readFiles,getLinks} from '../src/linksFile.js'
+import {readFiles,getLinks,promiseLinks} from '../src/linksFile.js'
 describe('Deberian ser funciones',()=>{
     expect(typeof readFiles).toBe('function')
 });
@@ -19,3 +19,11 @@ test('Deberia retornar un array de objetos, getLinks',()=>{
     file:
      '/home/nayruth/Escritorio/LIM009-fe-md-links/folder/readmeTuto.md' } ])
 });
+test('deberia retornar una promesa que resuelve un array de objetos,promiseLinks',()=>{
+    return promiseLinks('/home/nayruth/Escritorio/LIM009-fe-md-links/folder/readmeTuto.md').then(result =>{
+        expect(result).toEqual([ { href: 'https://www.laboratoria.la/',
+        text: 'LABORATORIA',
+        file:
+         '/home/nayruth/Escritorio/LIM009-fe-md-links/folder/readmeTuto.md' }])
+    })
+})

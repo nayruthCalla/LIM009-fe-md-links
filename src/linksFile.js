@@ -1,6 +1,5 @@
-import {readFile,markdownFile,modulefs} from './pathFiles.js';
-const marked = require('marked')
-// var fs = require('fs');
+import {readFile,markdownFile} from './pathFiles.js';
+import marked from  'marked';
 export const readFiles = (path)=>{
     return new Promise((resolve,reject)=>{
         readFile(path,(err,data)=>{
@@ -25,25 +24,20 @@ export const getLinks = (filecont,file)=>{
         
     }
     marked(filecont, { renderer: renderer })
-    return [].concat(arrLinks)
+    return (arrLinks)
 }
-console.log(getLinks('##Bienvenida a tu primer proyecto del track de Frontend en Laboratoria [LABORATORIA](https://www.laboratoria.la/)','/home/nayruth/Escritorio/LIM009-fe-md-links/folder/readmeTuto.md'))
+export const promiseLinks = (path)=>{
+    return markdownFile(path).then(result =>{
+        return Promise.all(result.map(readFiles)).then(result => {
+            return ([].concat(...result.map(element => (getLinks(element,path)))))
+        })
+    })
+    
+}
+// promiseLinks('/home/nayruth/Escritorio/LIM009-fe-md-links/folder/readmeTuto.md').then(result => console.log(result))
+
+// console.log(getLinks('##Bienvenida a tu primer proyecto del track de Frontend en Laboratoria [LABORATORIA](https://www.laboratoria.la/)','/home/nayruth/Escritorio/LIM009-fe-md-links/folder/readmeTuto.md'))
 // readFiles('/home/nayruth/Escritorio/LIM009-fe-md-links/folder/readmeTuto.md').then(result => console.log(result))
 
 
-/*
- var links = [];
-            var textarr = []
-            var renderer = new marked.Renderer();
-           result.forEach(element =>{
-               console.log(element)
-               renderer.link = function (href, title, text) {
-                links.push(href);
-                textarr.push(text);
-            }
-            marked(fs.readFileSync(element).toString(), { renderer: renderer });
-            resolve(links.concat(textarr))            
-           })
-           erickfloresq
-           ivandep
-*/
+
