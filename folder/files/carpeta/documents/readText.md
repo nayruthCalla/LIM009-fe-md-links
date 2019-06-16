@@ -1,1 +1,1 @@
-#hola (link)[htts/paths/not/.pe]
+#hola (link)[https://lms.laboratoria.l]

@@ -1,1 +1,1 @@
-##Bienvenida a tu primer proyecto del track de Frontend en Laboratoria [LABORATORIA](https://www.laboratoria.la/)
+##Bienvenida a tu primer proyecto del track de Frontend en Laboratoria [LABORATORIA](https://github.com/nodejs/node/blob/master/doc/topics/blocking-vs-non-blocking.md)

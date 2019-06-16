@@ -1,13 +1,9 @@
 import {readFile,markdownFile} from './pathFiles.js';
 import marked from  'marked';
 export const readFiles = (path)=>{
-    return new Promise((resolve,reject)=>{
+    return new Promise((resolve)=>{
         readFile(path,(err,data)=>{
-            if(err){
-                reject('Hubo un error!')
-            }else{
-                resolve(data.toString())
-            }
+            resolve(data.toString())            
         })
     })
 }
@@ -34,7 +30,7 @@ export const promiseLinks = (path)=>{
     })
     
 }
-// promiseLinks('/home/nayruth/Escritorio/LIM009-fe-md-links/folder/readmeTuto.md').then(result => console.log(result))
+// promiseLinks('/home/nayruth/Escritorio/LIM009-fe-md-links/folder/').then(result => console.log(result))
 
 // console.log(getLinks('##Bienvenida a tu primer proyecto del track de Frontend en Laboratoria [LABORATORIA](https://www.laboratoria.la/)','/home/nayruth/Escritorio/LIM009-fe-md-links/folder/readmeTuto.md'))
 // readFiles('/home/nayruth/Escritorio/LIM009-fe-md-links/folder/readmeTuto.md').then(result => console.log(result))

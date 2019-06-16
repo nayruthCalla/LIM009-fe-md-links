@@ -5,7 +5,7 @@ text: 'LABORATORIA',
 file:
  '/home/nayruth/Escritorio/LIM009-fe-md-links/folder/readmeTuto.md' }
 
-test('Deberia retornar un array de obejtos, validateLink',()=>{
+test('Deberia retornar un array de objetos, validateLink',()=>{
     return validateLink(objLinks).then(result =>{
         expect(result).toEqual({ href: 'https://www.laboratoria.la/',
         text: 'LABORATORIA',
@@ -15,15 +15,27 @@ test('Deberia retornar un array de obejtos, validateLink',()=>{
         status: 200 })
     })
 });
+test('deberia retornar un array de objetos con si la ruta no existe,validate',()=>{
+    return mdLinks('/home/nayruth/Escritorio/LIM009-fe-md-links/folder/files/carpeta/documents/readText.md').then(result =>{
+        validate(result).then(result => {
+            expect(result).toEqual([ { href: 'https://lms.laboratoria.l]',
+            text: 'https://lms.laboratoria.l]',
+            file:
+             '/home/nayruth/Escritorio/LIM009-fe-md-links/folder/files/carpeta/documents/readText.md',
+            status: null,
+            ok: false } ])
+        })
+    })
+})
 test('deberia retornar un array de objetos con,validate',()=>{
     return mdLinks('/home/nayruth/Escritorio/LIM009-fe-md-links/folder/readmeTuto.md').then(result =>{
         validate(result).then(result => {
-            expect(result).toEqual([{ href: 'https://www.laboratoria.la/',
+            expect(result).toEqual([{ href: 'https://github.com/nodejs/node/blob/master/doc/topics/blocking-vs-non-blocking.md',
             text: 'LABORATORIA',
             file:
              '/home/nayruth/Escritorio/LIM009-fe-md-links/folder/readmeTuto.md',
-            ok: 'ok',
-            status: 200 }])
+            ok: 'fail',
+            status: 404 }])
         })
     })
 })
