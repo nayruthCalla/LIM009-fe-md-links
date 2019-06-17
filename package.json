@@ -1,8 +1,8 @@
 {
-  "name": "lim009-fe-md-links",
-  "version": "1.0.0",
+  "name": "md-links003",
+  "version": "1.0.3",
   "description": "Libreria para la validacion de links en archivos markdonw",
-  "main": "./lib/md-link.js",
+  "main": "lib/md-link.js",
   "directories": {
     "test": "test"
   },
@@ -18,7 +18,7 @@
     "url": "git+https://github.com/nayruthCalla/LIM009-fe-md-links.git"
   },
   "author": "NayruthCalla",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/nayruthCalla/LIM009-fe-md-links/issues"
   },

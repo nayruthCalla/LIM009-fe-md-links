@@ -28,6 +28,7 @@ else {
             }
               
         })
+        .catch(err => console.log(err))
     }else{
         console.log('Usage md-links PATH [--stats] [--validate]')
     } 

@@ -18,8 +18,8 @@ test('Deberia retornar un array de objetos, validateLink',()=>{
 test('deberia retornar un array de objetos con si la ruta no existe,validate',()=>{
     return mdLinks('/home/nayruth/Escritorio/LIM009-fe-md-links/folder/files/carpeta/documents/readText.md').then(result =>{
         validate(result).then(result => {
-            expect(result).toEqual([ { href: 'https://lms.laboratoria.l]',
-            text: 'https://lms.laboratoria.l]',
+            expect(result).toEqual([ { href: 'https://lms.laboratoria.l',
+            text: '0123456789101112131415161718192021222324255656767',
             file:
              '/home/nayruth/Escritorio/LIM009-fe-md-links/folder/files/carpeta/documents/readText.md',
             status: null,
