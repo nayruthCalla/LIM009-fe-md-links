@@ -1,1 +1,1 @@
-#hola (link)[https://lms.laboratoria.l]
+#hola [0123456789101112131415161718192021222324255656767desdeaquimasde50char](https://lms.laboratoria.l)

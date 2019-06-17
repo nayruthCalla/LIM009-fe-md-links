@@ -1,13 +1,13 @@
 {
   "name": "lim009-fe-md-links",
   "version": "1.0.0",
-  "description": "## Preámbulo",
-  "main": "index.js",
+  "description": "Libreria para la validacion de links en archivos markdonw",
+  "main": "./lib/md-link.js",
   "directories": {
     "test": "test"
   },
   "bin": {
-    "md-links": "./lib/index.js"
+    "md-links": "./lib/cli.js"
   },
   "scripts": {
     "test": "jest --coverage",

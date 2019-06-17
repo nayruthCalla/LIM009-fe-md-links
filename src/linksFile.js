@@ -13,7 +13,7 @@ export const getLinks = (filecont,file)=>{
      renderer.link = (href, title, text) =>{
         let objLinks = {
             href : href, 
-            text :text,
+            text :text.substr(0,49),
             file : file
         }
         arrLinks.push(objLinks)
