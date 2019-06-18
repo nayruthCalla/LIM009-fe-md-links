@@ -1,7 +1,98 @@
 # Markdown Links
+---
+[md-links003](https://www.npmjs.com/package/md-links003) es una librería que lee y analiza archivos en formato `Markdown`, para verificar los links que contengan y reportar
+algunas estadísticas.
 
-## Preámbulo
+## Instalacion
+npm i --g md-links003
+## Uso (CLI)
+`md-links PATH --stats --validate`
+---
+- Por ejemplo:
+---
+```sh
+$ md-links ./some/example.md
+ruta: ./some/example.md, link: http://process.com/2/3/, texto: process
+ruta: ./some/example.md, link: http://google.com/ texto: Google
+```
+```sh13d99df067c1
+$ md-links ./some/example.md --validate ó --stats
+ruta: ./some/example.md, link: http://process.com/2/3/, ok, 200, texto: process
+ruta: ./some/example.md, link: https://ppt.net/algun-doc.html, fail, 404, ppt
+```
 
+```sh
+$ md-links ./some/example.md --stats ó --validate
+Total: 3
+Unique: 3
+```
+```sh
+$ md-links ./some/example.md --stats --validate
+Total: 3
+Unique: 3
+Broken: 1
+```
+
+## Uso (API)
+```js
+import mdLinks from 'md-links003';
+
+mdLinks('./some/path', { validate: true })
+  .then(links => console.log(links))
+  .catch(error => console.log(error));
+```
+#### `mdLinks(path, options)`
+
+##### Argumentos
+
+- `path`: Ruta absoluta o relativa al archivo o directorio. Si la ruta pasada es
+  relativa, debe resolverse como relativa al directorio desde donde se invoca
+  node - _current working directory_).
+- `options`: Un objeto con las siguientes propiedades:
+  * `validate`: Booleano que determina si se desea validar los links
+    encontrados.
+
+##### Valor de retorno
+
+La función debe retornar una promesa (`Promise`) que resuelva a un arreglo
+(`Array`) de objetos (`Object`), donde cada objeto representa un link y contiene
+las siguientes propiedades:
+
+- `href`: URL encontrada.
+- `text`: Texto que aparecía dentro del link (`<a>`).
+- `file`: Ruta del archivo donde se encontró el link.
+
+#### Ejemplo
+
+```js
+const mdLinks = require("md-links");
+
+mdLinks("./some/example.md")
+  .then(links => {
+    // => [{ href, text, file }]
+  })
+  .catch(console.error);
+
+mdLinks("./some/example.md", { validate: true })
+  .then(links => {
+    // => [{ href, text, file, status, ok }]
+  })
+  .catch(console.error);
+
+mdLinks("./some/dir")
+  .then(links => {
+    // => [{ href, text, file }]
+  })
+  .catch(console.error);
+```
+```sh
+$ md-links ./some/example.md --stats
+Total: 3
+Unique: 3
+```
+---
+### Flujograma de la solucion 
+![md-links](img/diagrama-mdlink.jpg)
 [Markdown](https://es.wikipedia.org/wiki/Markdown) es un lenguaje de marcado
 ligero muy popular entre developers. Es usado en muchísimas plataformas que
 manejan texto plano (GitHub, foros, blogs, ...), y es muy común
