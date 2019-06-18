@@ -6,7 +6,8 @@ algunas estadísticas.
 ## Instalación
 npm i --g md-links003
 ### Uso (CLI)
-`md-links PATH --stats --validate`
+
+#### `md-links PATH --stats --validate`
 ---
 - Por ejemplo:
 ---
@@ -15,17 +16,19 @@ $ md-links ./some/example.md
 ruta: ./some/example.md, link: http://process.com/2/3/, texto: process
 ruta: ./some/example.md, link: http://google.com/ texto: Google
 ```
+#### `md-links PATH --validate`
 ```sh13d99df067c1
 $ md-links ./some/example.md --validate ó --stats
 ruta: ./some/example.md, link: http://process.com/2/3/, ok, 200, texto: process
 ruta: ./some/example.md, link: https://ppt.net/algun-doc.html, fail, 404, ppt
 ```
-
+#### `md-links PATH --stats`
 ```sh
 $ md-links ./some/example.md --stats ó --validate
 Total: 3
 Unique: 3
 ```
+#### `md-links PATH --stats --validate`
 ```sh
 $ md-links ./some/example.md --stats --validate
 Total: 3
@@ -42,7 +45,6 @@ mdLinks('./some/path', { validate: true })
   .catch(error => console.log(error));
 ```
 #### `mdLinks(path, options)`
-
 ##### Argumentos
 
 - `path`: Ruta absoluta o relativa al archivo o directorio. Si la ruta pasada es
@@ -96,8 +98,8 @@ Unique: 3
 ![md-links](img/diagrama-mdlink.jpg)
 ---
 ## documentación técnica de la librería.
-#### Metodología: ##### Scrum
-#### Duración: ##### 3 semanas.
+#### Metodología: Scrum
+#### Duración: 3 semanas.
 [Github project](https://github.com/nayruthCalla/LIM009-fe-md-links/projects/1)
 
 ### Recursos que se utilizaron
@@ -115,3 +117,4 @@ Unique: 3
 - [Path](https://nodejs.org/api/path.html)
 - [Linea de comando CLI](https://medium.com/netscape/a-guide-to-create-a-nodejs-command-line-package-c2166ad0452e)
 
+⌨️  < LABORATORIA /> [Sobre mi](https://www.linkedin.com/in/carmen-nayruth-calla-mamani-a26164188/) 😊
