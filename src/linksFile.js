@@ -30,7 +30,9 @@ export const promiseLinks = (path)=>{
     })
     
 }
-// promiseLinks('/home/nayruth/Escritorio/LIM009-fe-md-links/folder/').then(result => console.log(result))
+// promiseLinks('./folder/')
+// .then(result => console.log(result))
+// .catch(result =>console.log(result))
 
 // console.log(getLinks('##Bienvenida a tu primer proyecto del track de Frontend en Laboratoria [LABORATORIA](https://www.laboratoria.la/)','/home/nayruth/Escritorio/LIM009-fe-md-links/folder/readmeTuto.md'))
 // readFiles('/home/nayruth/Escritorio/LIM009-fe-md-links/folder/readmeTuto.md').then(result => console.log(result))

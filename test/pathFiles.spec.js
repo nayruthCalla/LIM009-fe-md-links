@@ -28,6 +28,11 @@ test('deberia retornar un array de rutas absolutas',()=>{
         expect(result).toEqual(['/home/nayruth/Escritorio/LIM009-fe-md-links/folder/readmeTuto.md'])
     })
 })
+test('deberia retornar un array de rutas absolutas',()=>{
+    return markdownFile('./folder/files/app.js').then(result =>{
+        expect(result).toBe('No es archivo MArkdown')
+    })
+})
 test('Deberia retornar un array de rutas absolutas de solo archivos markdown si es un directorio',()=>{
     return markdownFile('./folder/').then(result =>{
         expect(result).toEqual([ '/home/nayruth/Escritorio/LIM009-fe-md-links/folder/README.md',

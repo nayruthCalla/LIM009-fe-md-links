@@ -20,7 +20,7 @@ export const pathFile = (path)=>{
             else {
                  readDir(absoltPath, (err, files) => {
                     // if(err){
-                        // reject('ocurrio un error')
+                    //     reject('ocurrio un error')
                     // }else{
                         const paths = files.map(elemt => join(absoltPath,elemt))
                         Promise.all(paths.map(element => pathFile(element)))
@@ -33,19 +33,17 @@ export const pathFile = (path)=>{
 }
  
 // resolve([].concat(...paths))
-// pathFile('./folder/').then(result => console.log(result))
+pathFile('./folder/vacia/').catch(result => console.log(result))
 export const markdownFile = (path)=>{
     const arrayPath = []
     return pathFile(path).then(result => {
           if(typeof result === 'string'){
-            if(extName(result)==='.md'){
-                arrayPath.push(result)
-                return arrayPath
-            }
+            arrayPath.push(result)
+            return extName(result)==='.md'? arrayPath:'No es archivo MArkdown'           
           }else{
             return result.filter(element => extName(element)==='.md' )
           }
     })
 }
-// markdownFile('/home/nayruth/Escritorio/LIM009-fe-md-links/folder/readmeTuto.md').then(result => console.log(result))
+// markdownFile('./folder/readmeTuto.md').then(result => console.log(result))
 
