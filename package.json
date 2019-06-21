@@ -1,6 +1,6 @@
 {
   "name": "md-links003",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Libreria para la validacion de links en archivos markdonw",
   "main": "lib/md-link.js",
   "directories": {

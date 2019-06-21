@@ -33,7 +33,7 @@ export const pathFile = (path)=>{
 }
  
 // resolve([].concat(...paths))
-pathFile('./folder/vacia/').catch(result => console.log(result))
+// pathFile('./folder/vacia/').catch(result => console.log(result))
 export const markdownFile = (path)=>{
     const arrayPath = []
     return pathFile(path).then(result => {
