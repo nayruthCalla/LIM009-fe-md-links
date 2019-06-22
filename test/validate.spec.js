@@ -3,14 +3,14 @@ import {mdLinks} from '../src/md-link.js'
 const objLinks = { href: 'https://www.laboratoria.la/',
 text: 'LABORATORIA',
 file:
- '/home/nayruth/Escritorio/LIM009-fe-md-links/folder/readmeTuto.md' }
+ './folder/readmeTuto.md' }
 
 test('Deberia retornar un array de objetos, validateLink',(done)=>{
     return validateLink(objLinks).then(result =>{
         expect(result).toEqual({ href: 'https://www.laboratoria.la/',
         text: 'LABORATORIA',
         file:
-         '/home/nayruth/Escritorio/LIM009-fe-md-links/folder/readmeTuto.md',
+         './folder/readmeTuto.md',
         ok: 'ok',
         status: 200 })
         done()

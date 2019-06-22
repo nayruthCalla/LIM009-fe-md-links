@@ -1,4 +1,5 @@
 import {readFiles,getLinks,promiseLinks} from '../src/linksFile.js'
+import {join} from '../src/pathFiles.js'
 describe('Deberian ser funciones',()=>{
     expect(typeof readFiles).toBe('function')
 });
@@ -14,7 +15,7 @@ test('Deberia retornar un array de objetos, getLinks',(done)=>{
     .toEqual([ { href: 'https://www.laboratoria.la/',
     text: 'LABORATORIA',
     file:
-     '/home/nayruth/Escritorio/LIM009-fe-md-links/folder/readmeTuto.md' } ])
+    join(`${process.cwd()}/folder/readmeTuto.md`)} ])
      done()
 });
 test('deberia retornar una promesa que resuelve un array de objetos,promiseLinks',(done)=>{
