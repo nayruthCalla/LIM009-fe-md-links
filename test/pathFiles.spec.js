@@ -45,7 +45,7 @@ test('Deberia retornar un array de rutas absolutas de solo archivos markdown si 
             join(`${process.cwd()}/folder/files/carpeta/archivo.md`),
             join(`${process.cwd()}/folder/files/carpeta/documents/readText.md`),
             join(`${process.cwd()}/folder/files/ejemplo.md`),
-            join(`${process.cwd()}/folder/README.md`),
+            join(`${process.cwd()}/folder/readme.md`),
             join(`${process.cwd()}/folder/readmeTuto.md`)])
         done()
     })
