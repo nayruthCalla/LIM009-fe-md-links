@@ -1,4 +1,3 @@
-import {mdLinks} from './md-link.js'
 export const statsLink = links =>{
     const arrLink = links.map(ele =>ele.href);
     const brokenLink = links.filter(ele =>ele.ok ==='fail')

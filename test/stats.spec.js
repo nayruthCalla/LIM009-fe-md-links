@@ -1,9 +1,16 @@
 import {statsLink} from '../src/stats.js'
-import {mdLinks} from '../src/md-link.js'
+import { join } from '../src/pathFiles.js'
 test('Deberia retornar un objeto con tres propiedades , statsLink',(done)=>{
-    return mdLinks('./folder/',{validate:true})
-    .then(result =>{
-       expect(statsLink(result)).toEqual({ total: 22, unique: 18, broken: 1 })
-       done()
-    })
+    expect(statsLink([
+        { file: join(`${process.cwd()}\\tests\\file-test\\file2-test\\README1.md`),
+          href: 'https://es.wikipedia.org/wiki/Markdown',
+          text: 'Markdown' },
+        { file: join(`${process.cwd()}\\tests\\file-test\\README.md`),
+          href: 'https://nodeschool.io/s/',
+          text: 'Markdown' },
+        { file: join(`${process.cwd()}\\tests\\file-test\\file3\\README.md`),
+          href: 'https://es.noexiste.org/',
+          text: 'Markdown' }
+      ])).toEqual({ total: 3, unique: 3, broken: 0 })
+      done()    
 })
